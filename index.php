@@ -1,25 +1,31 @@
- <form class="" action="index.php" method="post">
-   <p>
-     Введите число: <br>
-     <input type="text" name="age" value="">
-   </p>
-  </form>
-
 <?php
 
+$ages = 0;
+$work = [
+  [
+    "name" => "Дно",
+    "age" => "20"
+  ],
+  [
+    "name" => "Бомж",
+    "age" => "15"
+  ],
+  [
+    "name" => "Днина",
+    "age" => "19"
+  ],
+  [
+    "name" => "Бомжик",
+    "age" => "28"
+  ]
+];
 
-  $age = htmlspecialchars($_POST['num']);
+foreach ($work as $key => $value) {
+  foreach ($value as $k => $v) {
+    $ages = $ages + $v;
+  }
+  $ages = $ages / 4;
+}
+echo "$ages";
 
-   switch ($num) {
-     case 3:
-       echo "Три";
-       break;
-     case 5:
-      echo "Пять";
-       break;
-     default:
-       echo "Нет представления данного числа";
-       break;
-   }
-   
 ?>
